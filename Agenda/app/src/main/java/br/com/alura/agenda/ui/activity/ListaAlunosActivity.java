@@ -36,8 +36,8 @@ public class ListaAlunosActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
         configuraFabNovoAluno();
         configuraLista();
-        dao.salva(new Aluno("Danilo","122233","a@a.com"));
-        dao.salva(new Aluno("Herdy","122233","b@a.com"));
+        dao.salva(new Aluno("Danilo", "122233", "a@a.com"));
+        dao.salva(new Aluno("Herdy", "122233", "b@a.com"));
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
         int itemId = item.getItemId();
 
-        if(itemId == R.id.activity_lista_alunos_menu_remover) {
+        if (itemId == R.id.activity_lista_alunos_menu_remover) {
             AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
 
             Aluno aluno = adapter.getItem(menuInfo.position);
@@ -111,7 +111,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
     private void abreFormularioEditaAluno(Aluno aluno) {
         Intent intent = new Intent(ListaAlunosActivity.this, FormularioAlunoActivity.class);
-        intent.putExtra(CHAVE_ALUNO,aluno);
+        intent.putExtra(CHAVE_ALUNO, aluno);
         startActivity(intent);
     }
 
